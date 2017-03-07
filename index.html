@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<title>ענק וגמד בטרוס</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.8.0/jquery.modal.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.8.0/jquery.modal.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Alef" rel="stylesheet">
+<style>
+<!-- גיא ופלג יא מנאיאקים מסתכלים לי בקוד מקור אה??? -->
+body,p,h1,h2,h3,h4 {font-family: 'Alef', sans-serif}
+body, html {height: 100%}
+.logo {
+  margin: 15px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("http://tross.co/wp-content/uploads/2016/12/header-logo.png");
+}
+.tinted-image {
+  min-height: 100%;
+  background-position: center;
+
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    /* bottom, image */
+    url('http://www.sentieridelcinema.it/wp-content/uploads/2016/12/GGG-Grande-Gigante-Gentile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:13px;
+	-webkit-border-radius:13px;
+	border-radius:13px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:23px;
+	padding:14px 76px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+<body>
+
+<div style="direction:rtl;" class="tinted-image w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge logo"></div>
+  <div class="w3-display-middle">
+    <h1 class="w3-xxlarge w3-animate-top" style="text-align:center;">שלום לכל הענקים הנחמדים בקהל!</h1>
+    <div><h1 class="w3-xlarge w3-animate-top" style="text-align:center;">הכניסו את השם שלכם ואולי תקבלו הפתעה*</h1></div>
+    <div id="gruper-modal" style="display:none;">
+      <p>שלום לך גרופר הלם חמודות</p>
+      <p>אכן אני הוא הגמד שלך ולא אחר</p>
+      <p>גש למטבח, חפש על המקרר את הרמז הבא שיוביל אותך למתנה</p>
+      <iframe src="http://giphy.com/embed/Ve20ojrMWiTo4" width="450" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+    <div id="no-gruper-modal" style="display:none;">
+        <p> אני יודע מאוד שרצית, אבל לא, אני לא הגמד שלך </p>
+        <p> אולי פעם אחרת נשמה </p>
+        <iframe src="http://giphy.com/embed/9Y5BbDSkSTiY8" width="450" height="336" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <br>
+    <div class="w3-large w3-center">
+    <input id="nameOfTheAnakHaNeshama" class="w3-large w3-center" type="text" name="fname" placeholder="הכנס שם פרטי כאן"><br>
+    </div>
+    <br>
+    <br>
+    <div id="showMeTheMoney" class="w3-center"><a class="myButton">תביא לי מתנה בבקשה!</a></div>
+    <div>
+      <div><h1 class="w3-small" style="text-align:center;">*בכפכוף לתקנון, לא בשבת, ללא כפל מבצעים, לא בימי ראשון עד שבת</h1></div>
+</div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript">
+$( "#showMeTheMoney" ).click(function() {
+  var name = $("#nameOfTheAnakHaNeshama").val();
+
+  if(name === "יונתן" || name === "גרופר")
+    $('#gruper-modal').modal();
+  else
+    $('#no-gruper-modal').modal();
+});
+  </script>
+</html>
